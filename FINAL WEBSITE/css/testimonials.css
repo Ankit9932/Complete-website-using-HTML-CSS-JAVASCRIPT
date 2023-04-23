@@ -1,0 +1,55 @@
+/* services section */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+#testimonials {
+  background-color: rgb(200, 203, 177);
+}
+#testimonials h1 {
+  font-size: 30px;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+#testimonials .row {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1000px;
+  margin: auto;
+}
+#testimonials .box {
+  background-color: rgb(166, 168, 145);
+  border: 1px solid black;
+  box-shadow: 2px 5px 5px gray;
+  margin: 40px;
+  padding: 20px;
+  height: auto;
+  text-align: center;
+}
+#testimonials .row .box img {
+  height: 125px;
+  width: 125px;
+  border-radius: 100px;
+}
+#testimonials .row .box h2 {
+  padding-bottom: 15px;
+}
+#testimonials .row .box p {
+  padding-top: 15px;
+  color: black;
+}
+
+@media (max-width: 950px) {
+  #testimonials .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  #testimonials .box {
+    width: 70%;
+  }
+}
+

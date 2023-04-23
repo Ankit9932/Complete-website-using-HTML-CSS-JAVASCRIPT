@@ -1,0 +1,169 @@
+/* importing external font from google */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:wght@400;500;600;700&display=swap");
+
+/* css reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "work-Sans", sans-serif;
+}
+
+html {
+  /* px unit is old try using %/rem */
+  /* 1 rem = 10px */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  /* this is for mobile menu hiding that displays as blank on right og main webpage*/
+  overflow-x: hidden;
+}
+
+body {
+  /* this is for mobile menu hiding */
+  overflow-x: hidden;
+}
+
+#header {
+  /* 1 rem = 10px , so 10 rem = 10*10=100px  */
+  position:fixed;
+  height: 7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem;
+  width: 100%;
+  background-color: rgb(52, 91, 91);
+}
+#header .logo img{
+  align-items: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+  height: 60px;
+}
+#header .logo img:hover{
+    color: #d7970d;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin-left: 100px;
+}
+
+.navbar ul li a {
+  display:block ;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 10px;
+  color: rgb(253, 250, 250);
+}
+
+.navbar ul li a:hover {
+  color: #555;
+  transition: all 0.4s;
+  background-color: #96e5eb;
+}
+
+.social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/* mobile menu (hidden for desktop size)----------- */
+.mobile-nav-icon {
+    height: 4rem;
+    width: 4rem;
+  }
+
+.mobile-navbar {
+  /* this is done to hide it for desktop version */
+  display: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.mobile-nav-icon[name="close-circle-outline"] {
+  /* when mobile toggle is shown then this is to hide cross */
+  display: none;
+}
+
+/* responsive code for mobile */
+@media (max-width: 980px) {
+
+  #header{
+    position:absolute;
+  }
+  .navbar {
+    /* if we make navbar display as none then animation will not work */
+    /* display: none; */
+
+    /* so we use below format */
+    height: 100vh;
+    width: 70%;
+    /* background: #0b6679; */
+    background-color: rgb(52, 91, 91);
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* to bring it from left when clicked */
+    transform: translateX(100%);
+    transition: all 0.2s linear;
+
+    /* to hide it from right of homepage(it was showing when not applied below code)  */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #header .social-links a{
+    visibility: hidden;
+  }
+
+  .active .navbar {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .active .mobile-navbar .mobile-nav-icon[name="close-circle-outline"] {
+    display: block;
+  }
+
+  .active .mobile-navbar .mobile-nav-icon[name="menu-outline"] {
+    display: none;
+  }
+
+  .mobile-navbar {
+    display: block;
+
+    /* z-index is very omportant to display cross symbol of mobile menu */
+    z-index: 999;
+  }
+}
+
+

@@ -1,0 +1,51 @@
+/* home section --------------------------------*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+#home {
+    /* background-color: rgb(200, 203, 177); */
+    background: url("../images/hero.jpg") no-repeat center center/cover;
+    padding: 100px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: auto;
+    margin-top: 70px;
+  }
+  .info h1 {
+    font-size: 50px;
+    line-height: 1.5;
+    text-align: left;
+    color: rgb(200, 203, 177);
+  }
+  .info p{
+    font-size: 20px;
+    color: rgb(200, 203, 177);
+  }
+  .info .btn{
+    background-color: rgb(216, 216, 214);
+    padding: 10px 40px;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  .info .btn:hover{
+    background-color: rgb(109, 109, 107);
+    color: white;
+  }
+  
+@media (max-width: 1000px){
+    #home{
+      padding: 50px;
+      width: 100%;
+    }
+    .info h1{
+      font-size: 30px;
+      text-align: center;
+    }
+    .info p{
+      font-size: 18px;
+    }
+  }
